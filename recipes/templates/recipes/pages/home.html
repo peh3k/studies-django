@@ -1,13 +1,11 @@
 {% include 'recipes/partials/head.html' %}
 
 <body>
-    <header class="main-header">
-        <div class="main-header-content">
-            <i class="fa-solid fa-carrot"></i>
-            <a href="/home"><h1>Receitas</h1></a>
-            
-        </div>
-    </header>
+    {% include 'recipes/partials/header.html' %}
+    {% include 'recipes/partials/search.html' %}
+    {% include 'recipes/partials/recipes.html' %}
+    {% include 'recipes/partials/footer.html' %}
+
 
 </body>
 
