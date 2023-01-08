@@ -11,7 +11,7 @@ fake = Faker('pt_BR')
 # print(signature(fake.random_number))
 
 
-def make_fake():
+def fake_gen():
     return {
         'title': fake.sentence(nb_words=6),
         'description': fake.sentence(nb_words=12),
