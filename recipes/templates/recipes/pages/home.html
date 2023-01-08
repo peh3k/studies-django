@@ -1,13 +1,12 @@
-{% include 'recipes/partials/head.html' %}
+{% extends 'global/base.html' %}
 
-<body>
-    {% include 'recipes/partials/header.html' %}
-    {% include 'recipes/partials/search.html' %}
-    {% include 'recipes/partials/recipes.html' %}
-    {% include 'recipes/partials/footer.html' %}
+{% block title %}HOME{% endblock title %}
+
+<section class="section-cards">
+    {% block receitas %}
+        {% include 'recipes/partials/card-receita.html' %}
+    {% endblock receitas %}
+</section>
     
 
 
-</body>
-
-</html>

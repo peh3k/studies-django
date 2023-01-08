@@ -227,12 +227,13 @@ a {
     margin-top: 4rem;
 }
 
-.card-view {
+.card-receita {
     max-width: 60rem;
     margin: 0 auto;
     padding: 4rem;
+    padding-top: 0;
 }
 
-.card-view .grid:hover {
+.card-receita .grid:hover {
     transform: none;
 }
