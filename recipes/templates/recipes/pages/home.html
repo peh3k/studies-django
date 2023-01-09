@@ -2,11 +2,18 @@
 
 {% block title %}HOME{% endblock title %}
 
-<section class="section-cards">
-    {% block receitas %}
-        {% include 'recipes/partials/card-receita.html' %}
-    {% endblock receitas %}
-</section>
+{% block receitas %}
+
+    <section class="section-cards">
+        {% for card in recipes  %}
+
+            {% include 'recipes/partials/card-receita.html' %}
+        
+        {% endfor %}
+    </section>
+
+{% endblock receitas %}
+
     
 
 

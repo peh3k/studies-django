@@ -1,22 +1,21 @@
 <div class="grid">
     <div class="grid-img"> <img
-            src="https://ser.vitao.com.br/wp-content/uploads/2017/12/shutterstock_252338818-1-920x535.jpg" alt="">
+            src={{card.cover.url}} alt="">
     </div>
     <div class="card-content">
         <span>
-            <h3>Receita de salada de frutas</h3>
+            <h3>{{card.title}}</h3>
         </span>
         <span class="usuario-log">
             <i class="fa-solid fa-user"></i>
-            <p>Pedro f</p>
+            <p>{{card.author.first_name}}</p>
             <i class="fa-solid fa-calendar-days"></i>
-            <p>23/12/2021 às 11:14</p>
+            <p>{{card.created_at|date:"d/m/Y"}} às {{card.created_at|date:"H:i"}} </p>
             <i class="fa-solid fa-bowl-food"></i>
-            <p><a href="#">Café da manhã</a></p>
+            <p><a href="#">{{card.category.name}}</a></p>
         </span>
         <span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores est eaque corporis esse aperiam
-                odio sapiente</p>
+            <p>{{card.description}} </p>
         </span>
     </div>
     <div class="container-porcoes">
@@ -32,17 +31,26 @@
         </span>
         <span class="info-preparo">
             <span class="time-recipe">
-                <p>5 Minutos</p>
+                <p>{{card.preparation_time}} Minutos</p>
             </span>
             <span class="porcoes-recipe">
-                <p>1 Porção</p>
+                <p>{{card.servings}} Porção</p>
             </span>
         </span>
     </div>
-    <footer class="footer-card">
-        <a href="/receita/3">
-            <i class="fa-solid fa-eye"></i>
-            <p>Ver mais...</p>
-        </a>
-    </footer>
+    {% if not page_detail %}
+        <footer class="footer-card">
+            <a href="/receita/3">
+                <i class="fa-solid fa-eye"></i>
+                <p>Ver mais...</p>
+            </a>
+        </footer>
+    {% endif %}
+
+    {% if page_detail %}
+        <div class="preparation-steps">
+            <p>{{card.preparation_steps|linebreaks}} </p>
+        </div>
+    
+    {% endif %}
 </div>
